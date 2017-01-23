@@ -165,6 +165,14 @@ impl AsRef<[u8]> for EasyBuf {
     }
 }
 
+impl Deref for EasyBuf {
+    type Target = [u8];
+
+    fn deref(&self) -> &[u8] {
+        &self.buf
+    }
+}
+
 impl<'a> Deref for EasyBufMut<'a> {
     type Target = Vec<u8>;
 
